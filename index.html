@@ -13,7 +13,7 @@
     <form id="login-form">
       <h2>Login</h2>
       <label for="username">Username</label>
-      <input type="text" id="username" placeholder="Earl's gf small caps no space" required />
+      <input type="text" id="username" placeholder="Earl's gf name small caps no space" required />
       <label for="password">Password</label>
       <input type="password" id="password" placeholder="Your bday MM/DD/YY" required />
       <button type="submit">Enter</button>
@@ -27,8 +27,8 @@
       <nav>
         <ul>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#letter">Love Letter</a></li>
           <li><a href="#timeline">Our Memories</a></li>
+          <li><a href="#letter">Love Letter</a></li>
         </ul>
       </nav>
     </header>
@@ -41,49 +41,44 @@
         <img src="photos/vroom.jpg" alt="Memory 4" loading="lazy" />
       </section>
 
-      <section id="letter" class="love-letter">
-        <h2>Click Me</h2>
-        <a href="love-letter.html" class="btn-love">Read</a>
-      </section>
-
       <section id="timeline" class="timeline">
         <h2>Our Memories</h2>
-
         <div class="timeline-item">
           <span class="date">Mayon</span>
           <p>DumogHAHAHHAAH</p>
         </div>
-
         <div class="photo-gallerys">
           <img src="photos/6327697492845642662.jpg" alt="Memory 1" loading="lazy" />
           <img src="photos/6327697492845642668.jpg" alt="Memory 2" loading="lazy" />
           <img src="photos/6327697492845642628.jpg" alt="Memory 3" loading="lazy" />
           <img src="photos/6329949292659328220.jpg" alt="Memory 4" loading="lazy" />
         </div>
-
         <div class="timeline-item">
           <span class="date">KC LAND</span>
           <p>Nakarabas naman</p>
         </div>
-
         <div class="photo-gallerys">
           <img src="photos/6276237896239401744.jpg" alt="Memory 1" loading="lazy" />
           <img src="photos/6276237896239401746.jpg" alt="Memory 2" loading="lazy" />
           <img src="photos/6276237896239401766.jpg" alt="Memory 3" loading="lazy" />
           <img src="photos/6276237896239401772.jpg" alt="Memory 4" loading="lazy" />
         </div>
-
         <div class="timeline-item">
-          <span class="date">Park Day</span>
+          <span class="date">KC Land</span>
           <p>Fun bonding with lots of laughter</p>
         </div>
-
         <div class="photo-gallerys">
           <img src="photos/6190227413745649559.jpg" alt="Memory 1" loading="lazy" />
           <img src="photos/6188234763668670110.jpg" alt="Memory 2" loading="lazy" />
           <img src="photos/6188234763668670098.jpg" alt="Memory 3" loading="lazy" />
           <img src="photos/587ac967-0d24-4566-83c6-914edc869065.jpg" alt="Memory 4" loading="lazy" />
         </div>
+      </section>
+
+      <!-- Love Letter Section (Now Last) -->
+      <section id="letter" class="love-letter">
+        <h2>Click Me</h2>
+        <button class="btn-love" id="open-letter">Read</button>
       </section>
     </main>
 
@@ -92,6 +87,34 @@
     </footer>
   </div>
 
+  <!-- Modal for Love Letter -->
+  <div id="love-letter-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:999; justify-content:center; align-items:center;">
+    <div style="background:white; max-width:700px; padding:2rem; border-radius:12px; text-align:center; position:relative;">
+      <h1 style="color: #d32f2f; font-family: 'Dancing Script', cursive; font-size: 3rem;">My Love Letter to You</h1>
+      <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 2rem;">
+        Hi Love,<br><br>
+        Happy 20th birthday, my love. On this special day, I want to remind you of how deeply grateful I am to have you in my life.
+        Every moment spent with you is a beautiful memory I cherish. You are kind, sweet, and the most beautiful person inside and out.
+        Thank you for being my light in dark days and my smile on the brightest ones. I look forward to creating more memories with you,
+        growing together, and loving each other even more as time passes.<br><br>
+        I love you more than words can ever express.<br><br>
+        With all my heart,<br>
+        Earl ❤️
+      </p>
+      <button style="margin-top: 1.5rem;" class="btn-love" id="close-letter">Close</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script>
+    // Open and close modal logic
+    document.getElementById('open-letter').addEventListener('click', () => {
+      document.getElementById('love-letter-modal').style.display = 'flex';
+    });
+
+    document.getElementById('close-letter').addEventListener('click', () => {
+      document.getElementById('love-letter-modal').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
